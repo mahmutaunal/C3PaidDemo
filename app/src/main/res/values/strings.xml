@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">C3PaidDemo</string>
+    <string name="needs_review_back">Back</string>
+    <string name="needs_review_open_practice">Open Practice</string>
+    <string name="practice_pronunciation_placeholder">Practice Pronunciation (placeholder)</string>
+    <string name="common_back">Back</string>
+    <string name="my_progress_go_to_needs_review">Go to Needs Review</string>
 </resources>
