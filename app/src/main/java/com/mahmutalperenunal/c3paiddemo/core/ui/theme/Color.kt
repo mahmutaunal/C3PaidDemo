@@ -2,10 +2,23 @@ package com.mahmutalperenunal.c3paiddemo.core.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple80 = Color(0xFFD0BCFF)
-val PurpleGrey80 = Color(0xFFCCC2DC)
-val Pink80 = Color(0xFFEFB8C8)
+// Primary brand colors
+val PurplePrimary = Color(0xFF6A3EB5)
+val PurpleSecondary = Color(0xFF8E67D6)
 
-val Purple40 = Color(0xFF6650a4)
-val PurpleGrey40 = Color(0xFF625b71)
-val Pink40 = Color(0xFF7D5260)
+// Backgrounds
+val ScreenBackground = Color(0xFFF3EFF8)
+val CardBackground = Color(0xFFFFFFFF)
+
+// Text colors
+val TextPrimary = Color(0xFF1F1F1F)
+val TextSecondary = Color(0xFF6B6B6B)
+
+// Status colors
+val SuccessGreen = Color(0xFF22A45D)
+val ErrorRed = Color(0xFFE53935)
+
+// Soft accent backgrounds
+val LightPurpleCard = Color(0xFFEDE4FA)
+val LightBlueCard = Color(0xFFE3F2FD)
+val LightYellowCard = Color(0xFFFFF3CD)
