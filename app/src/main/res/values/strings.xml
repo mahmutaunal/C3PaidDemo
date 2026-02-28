@@ -4,5 +4,19 @@
     <string name="needs_review_open_practice">Open Practice</string>
     <string name="practice_pronunciation_placeholder">Practice Pronunciation (placeholder)</string>
     <string name="common_back">Back</string>
-    <string name="my_progress_go_to_needs_review">Go to Needs Review</string>
+    <string name="my_progress_title">My Progress</string>
+    <string name="my_progress_words_spoken">Words Spoken</string>
+    <string name="my_progress_sentences_spoken">Sentences Spoken</string>
+    <string name="my_progress_needs_review">Needs Review</string>
+    <string name="my_progress_value_placeholder">12</string>
+    <string name="daily_streak_title">Daily Streak</string>
+    <string name="day_sun">Sun</string>
+    <string name="day_mon">Mon</string>
+    <string name="day_tue">Tue</string>
+    <string name="day_wed">Wed</string>
+    <string name="day_thu">Thu</string>
+    <string name="day_fri">Fri</string>
+    <string name="day_sat">Sat</string>
+    <string name="streak_fire_emoji">🔥</string>
+    <string name="speaking_practice">Speaking Practise</string>
 </resources>

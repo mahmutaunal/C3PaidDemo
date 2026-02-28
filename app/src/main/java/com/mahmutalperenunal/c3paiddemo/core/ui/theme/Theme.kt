@@ -15,8 +15,8 @@ private val LightColorScheme = lightColorScheme(
     primary = PurplePrimary,
     secondary = PurpleSecondary,
 
-    background = ScreenBackground,
-    surface = CardBackground,
+    background = ScreenBg,
+    surface = SurfaceWhite,
 
     onPrimary = Color.White,
     onSecondary = Color.White,
@@ -24,13 +24,13 @@ private val LightColorScheme = lightColorScheme(
     onBackground = TextPrimary,
     onSurface = TextPrimary,
 
-    surfaceVariant = LightPurpleCard,
+    surfaceVariant = SurfaceWhite,
     onSurfaceVariant = TextPrimary,
 
     error = ErrorRed,
     onError = Color.White,
 
-    outline = TextSecondary
+    outline = OutlineMuted
 )
 
 private val DarkColorScheme = darkColorScheme(
@@ -52,13 +52,13 @@ private val DarkColorScheme = darkColorScheme(
     error = ErrorRed,
     onError = Color.White,
 
-    outline = Color(0xFF8A8A8A)
+    outline = OutlineMuted
 )
 
 @Composable
 fun C3PaidDemoTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
