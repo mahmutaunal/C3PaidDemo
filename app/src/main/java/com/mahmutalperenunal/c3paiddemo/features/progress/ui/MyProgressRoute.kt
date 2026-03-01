@@ -14,10 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.mahmutalperenunal.c3paiddemo.R
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.DpOffset
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.DpSize
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.EllipseDecor
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.ImageDecor
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.ProgressCardDecor
 import com.mahmutalperenunal.c3paiddemo.core.ui.components.*
-import com.mahmutalperenunal.c3paiddemo.core.ui.components.ProgressCardDecor
-import com.mahmutalperenunal.c3paiddemo.core.ui.components.EllipseDecor
-import com.mahmutalperenunal.c3paiddemo.core.ui.components.ImageDecor
 import com.mahmutalperenunal.c3paiddemo.core.ui.theme.*
 
 @Composable
@@ -122,6 +124,7 @@ fun MyProgressRoute(
                     modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
+                    // Header row linking to Speaking Practice section (visual only in prototype).
                     Row(
                         modifier = Modifier
                             .width(378.dp)
@@ -150,6 +153,7 @@ fun MyProgressRoute(
                     modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
+                    // Static metric card (non-interactive in prototype).
                     ProgressCard(
                         title = stringResource(id = R.string.my_progress_words_spoken),
                         value = stringResource(id = R.string.my_progress_value_placeholder),
@@ -169,6 +173,7 @@ fun MyProgressRoute(
                     modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
+                    // Static metric card (non-interactive in prototype).
                     ProgressCard(
                         title = stringResource(id = R.string.my_progress_sentences_spoken),
                         value = stringResource(id = R.string.my_progress_value_placeholder),
@@ -209,6 +214,7 @@ fun MyProgressRoute(
                     modifier = Modifier.fillMaxWidth(),
                     contentAlignment = Alignment.Center
                 ) {
+                    // Weekly streak visualization component.
                     DailyStreakCard(
                         modifier = Modifier.width(378.dp),
                         activeDays = 3

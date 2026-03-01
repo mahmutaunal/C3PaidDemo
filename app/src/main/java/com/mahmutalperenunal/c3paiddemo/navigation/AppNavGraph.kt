@@ -8,35 +8,38 @@ import com.mahmutalperenunal.c3paiddemo.features.practice.ui.PracticePronunciati
 import com.mahmutalperenunal.c3paiddemo.features.progress.ui.MyProgressRoute
 import com.mahmutalperenunal.c3paiddemo.features.review.ui.NeedsReviewRoute
 
-
 // Centralized navigation graph defining all prototype-accessible destinations.
 @Composable
 fun AppNavGraph(
     navController: NavHostController,
-    // Default start matches the prototype entry screen.
     startDestination: String = Routes.MY_PROGRESS
 ) {
-    // NavHost ties the NavController to composable destinations.
     NavHost(
         navController = navController,
         startDestination = startDestination
     ) {
-        // Progress screen (prototype landing screen).
         composable(Routes.MY_PROGRESS) {
             MyProgressRoute(
-                onOpenNeedsReview = { navController.navigate(Routes.NEEDS_REVIEW) }
+                onOpenNeedsReview = {
+                    navController.navigate(Routes.NEEDS_REVIEW) {
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                }
             )
         }
 
-        // Needs Review screen opened from Progress card.
         composable(Routes.NEEDS_REVIEW) {
             NeedsReviewRoute(
                 onBack = { navController.popBackStack() },
-                onOpenPractice = { navController.navigate(Routes.PRACTICE_PRONUNCIATION) }
+                onOpenPractice = {
+                    navController.navigate(Routes.PRACTICE_PRONUNCIATION) {
+                        launchSingleTop = true
+                    }
+                }
             )
         }
 
-        // Practice Pronunciation screen opened from Needs Review.
         composable(Routes.PRACTICE_PRONUNCIATION) {
             PracticePronunciationRoute(
                 onBack = { navController.popBackStack() }

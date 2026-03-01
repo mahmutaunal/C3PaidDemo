@@ -1,6 +1,5 @@
 package com.mahmutalperenunal.c3paiddemo.core.ui.components
 
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.border
 import androidx.compose.foundation.Image
 import androidx.compose.ui.layout.ContentScale
@@ -23,40 +22,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-
-data class ProgressCardDecor(
-    val ellipses: List<EllipseDecor> = emptyList(),
-    val images: List<ImageDecor> = emptyList(),
-    @param:DrawableRes val illustrationRes: Int? = null,
-    val illustrationSize: DpSize = DpSize.Zero,
-    val illustrationOffset: DpOffset = DpOffset(0.dp, 0.dp),
-    val illustrationRotationDeg: Float = 0f
-)
-
-data class ImageDecor(
-    @param:DrawableRes val drawableRes: Int,
-    val size: DpSize,
-    val offset: DpOffset,
-    val rotationDeg: Float = 0f,
-    val alpha: Float = 1f
-)
-
-data class EllipseDecor(
-    val size: DpSize,
-    val offset: DpOffset,
-    @param:DrawableRes val drawableRes: Int? = null,
-    val color: Color = Color.Transparent,
-    val alpha: Float = 1f
-)
-
-data class DpOffset(val x: Dp, val y: Dp)
-data class DpSize(val width: Dp, val height: Dp) {
-    companion object {
-        val Zero = DpSize(0.dp, 0.dp)
-    }
-}
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.DpSize
+import com.mahmutalperenunal.c3paiddemo.core.ui.model.ProgressCardDecor
 
 @Composable
 fun ProgressCard(
@@ -107,6 +75,7 @@ fun ProgressCard(
                 if (res != null) {
                     Image(
                         painter = painterResource(id = res),
+                        // Decorative background element (no accessibility label needed).
                         contentDescription = null,
                         contentScale = ContentScale.Fit,
                         modifier = ellipseModifier
@@ -123,6 +92,7 @@ fun ProgressCard(
             d.images.forEach { img ->
                 Image(
                     painter = painterResource(id = img.drawableRes),
+                    // Decorative overlay image positioned per design.
                     contentDescription = null,
                     contentScale = ContentScale.Fit,
                     modifier = Modifier
@@ -139,6 +109,7 @@ fun ProgressCard(
             if (resId != null && d.illustrationSize != DpSize.Zero) {
                 Image(
                     painter = painterResource(id = resId),
+                    // Optional illustration asset (visual only in prototype).
                     contentDescription = null,
                     contentScale = ContentScale.Fit,
                     modifier = Modifier
@@ -154,6 +125,7 @@ fun ProgressCard(
                 )
             }
         }
+        // Foreground content layer (title/value + CTA icon).
         Row(
             modifier = Modifier
                 .fillMaxSize()
