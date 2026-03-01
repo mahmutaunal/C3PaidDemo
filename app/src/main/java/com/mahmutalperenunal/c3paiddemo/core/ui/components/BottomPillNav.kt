@@ -18,9 +18,9 @@ import androidx.compose.ui.unit.dp
 import com.mahmutalperenunal.c3paiddemo.R
 import com.mahmutalperenunal.c3paiddemo.core.ui.theme.NavPillBg
 import com.mahmutalperenunal.c3paiddemo.core.ui.theme.NavProgressTint
-import com.mahmutalperenunal.c3paiddemo.core.ui.theme.ScreenBg
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.ui.draw.clip
 
 @Composable
 fun BottomPillNav(
@@ -31,8 +31,7 @@ fun BottomPillNav(
     Box(
         modifier = modifier
             .fillMaxWidth()
-            .height(100.dp)
-            .background(ScreenBg),
+            .height(100.dp),
         contentAlignment = Alignment.TopCenter
     ) {
         // Very large radius to create a true “pill” shape regardless of height.
@@ -45,9 +44,11 @@ fun BottomPillNav(
                 .size(width = 195.dp, height = 72.dp)
                 // Shadow is drawn outside the clipped pill to match the soft elevation in the design.
                 .shadow(elevation = 2.dp, shape = pillShape, clip = false)
+                // Ensure the pill background is clipped to the pill shape (prevents square background artifacts).
+                .clip(pillShape)
                 // Subtle outline to separate the pill from the background (per design).
                 .border(width = 1.dp, color = Color(0x14000000), shape = pillShape)
-                .background(NavPillBg)
+                .background(color = NavPillBg)
                 .padding(horizontal = 24.dp, vertical = 12.dp),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
